@@ -420,6 +420,16 @@ address space, and which symbols to create.
 
 ### Linker script
 
+When you compile firmware, the output is an ELF file with sections:
+`.text` (code), `.data` and `.rodata` (data), `.bss`
+(uninitialized data), and more.
+
+A microcontroller has multiple memory regions - typically one Flash
+and several RAM blocks.
+
+The linker script maps ELF sections to those memory regions.
+In other words, it defines the firmware memory layout.
+
 Create a file `link.ld`, and copy-paste contents from
 [steps/step-0-minimal/link.ld](steps/step-0-minimal/link.ld). Below is the explanation:
 
